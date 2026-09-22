@@ -51,7 +51,7 @@ export async function ingestReading(payload: IngestPayload) {
       risk_level: evaluation.riskLevel,
       activity_pattern: evaluation.activityPattern,
       confidence: evaluation.confidence,
-      raw_payload: payload as unknown as Record<string, unknown>,
+      raw_payload: JSON.parse(JSON.stringify(payload)),
     })
     .select()
     .single();
