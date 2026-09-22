@@ -1,7 +1,5 @@
 # Vital-Lume
 
-Reference : DO NOT copy this prebvious website as it is but this is what we are trying to level up : https://vitallume66.vercel.app/
-
 Build "VitalLume" — a privacy-preserving ambient home safety & health-monitoring web app that reads data from IoT sensors installed in a home (no wearables, no cameras — sensors live in a device).
 
 === DESIGN DIRECTION ===
@@ -68,7 +66,7 @@ Deploy via Lovable's built-in publish/hosting with Supabase connected as the bac
 
 This project was built with [Lovable](https://lovable.dev).
 
-**Live app**: https://bright-nest-monitor.lovable.app
+**Live app**: https://vital-lume.lovable.app
 
 ## Build with Lovable
 
