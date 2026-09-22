@@ -27,13 +27,13 @@ export const DEFAULT_THRESHOLDS: Thresholds = {
 };
 
 export type Reading = {
-  temperature?: number | null;
-  humidity?: number | null;
-  pressure?: number | null;
-  gas?: number | null;
-  sound?: number | null;
-  motion?: boolean | null;
-  presence?: boolean | null;
+  temperature?: number | null | undefined;
+  humidity?: number | null | undefined;
+  pressure?: number | null | undefined;
+  gas?: number | null | undefined;
+  sound?: number | null | undefined;
+  motion?: boolean | null | undefined;
+  presence?: boolean | null | undefined;
 };
 
 export type Finding = {
