@@ -132,5 +132,57 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-sans);
+    background-image: radial-gradient(
+        900px 500px at 8% -10%,
+        oklch(0.95 0.06 150 / 0.55),
+        transparent 60%
+      ),
+      radial-gradient(800px 480px at 105% 0%, oklch(0.96 0.06 85 / 0.5), transparent 60%);
+    background-attachment: fixed;
   }
+
+  h1,
+  h2,
+  h3,
+  .font-display {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+  }
+}
+
+@utility card-soft {
+  border-radius: var(--radius-2xl);
+  background-color: var(--color-card);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-soft);
+}
+
+@utility chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border-radius: 9999px;
+  padding: 0.3rem 0.8rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+@keyframes vl-pulse-ring {
+  0% {
+    box-shadow: 0 0 0 0 currentColor;
+    opacity: 0.6;
+  }
+  70% {
+    box-shadow: 0 0 0 14px transparent;
+    opacity: 0;
+  }
+  100% {
+    box-shadow: 0 0 0 0 transparent;
+    opacity: 0;
+  }
+}
+
+@utility pulse-ring {
+  animation: vl-pulse-ring 1.8s ease-out infinite;
 }
