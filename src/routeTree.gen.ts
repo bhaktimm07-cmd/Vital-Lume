@@ -10,33 +10,206 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AlertsRouteImport } from './routes/alerts'
+import { Route as DashboardRouteImport } from './routes/dashboard'
+import { Route as DispatchRouteImport } from './routes/dispatch'
+import { Route as SimulatorRouteImport } from './routes/simulator'
+import { Route as ApiPublicAlertsRouteImport } from './routes/api/public/alerts'
+import { Route as ApiPublicHealthRouteImport } from './routes/api/public/health'
+import { Route as ApiPublicAlertsIdRouteImport } from './routes/api/public/alerts.$id'
+import { Route as ApiPublicDeviceDataRouteImport } from './routes/api/public/device/data'
+import { Route as ApiPublicSensorsDataRouteImport } from './routes/api/public/sensors/data'
+import { Route as ApiPublicSensorsHistoryRouteImport } from './routes/api/public/sensors/history'
+import { Route as ApiPublicSensorsLatestRouteImport } from './routes/api/public/sensors/latest'
+import { Route as ApiPublicTestSensorDataRouteImport } from './routes/api/public/test/sensor-data'
+import { Route as ApiPublicDeviceStatusDeviceIdRouteImport } from './routes/api/public/device/status.$deviceId'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AlertsRoute = AlertsRouteImport.update({
+  id: '/alerts',
+  path: '/alerts',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardRoute = DashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DispatchRoute = DispatchRouteImport.update({
+  id: '/dispatch',
+  path: '/dispatch',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SimulatorRoute = SimulatorRouteImport.update({
+  id: '/simulator',
+  path: '/simulator',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiPublicAlertsRoute = ApiPublicAlertsRouteImport.update({
+  id: '/api/public/alerts',
+  path: '/api/public/alerts',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiPublicHealthRoute = ApiPublicHealthRouteImport.update({
+  id: '/api/public/health',
+  path: '/api/public/health',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiPublicAlertsIdRoute = ApiPublicAlertsIdRouteImport.update({
+  id: '/$id',
+  path: '/$id',
+  getParentRoute: () => ApiPublicAlertsRoute,
+} as any)
+const ApiPublicDeviceDataRoute = ApiPublicDeviceDataRouteImport.update({
+  id: '/api/public/device/data',
+  path: '/api/public/device/data',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiPublicSensorsDataRoute = ApiPublicSensorsDataRouteImport.update({
+  id: '/api/public/sensors/data',
+  path: '/api/public/sensors/data',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiPublicSensorsHistoryRoute = ApiPublicSensorsHistoryRouteImport.update({
+  id: '/api/public/sensors/history',
+  path: '/api/public/sensors/history',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiPublicSensorsLatestRoute = ApiPublicSensorsLatestRouteImport.update({
+  id: '/api/public/sensors/latest',
+  path: '/api/public/sensors/latest',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiPublicTestSensorDataRoute = ApiPublicTestSensorDataRouteImport.update({
+  id: '/api/public/test/sensor-data',
+  path: '/api/public/test/sensor-data',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiPublicDeviceStatusDeviceIdRoute =
+  ApiPublicDeviceStatusDeviceIdRouteImport.update({
+    id: '/api/public/device/status/$deviceId',
+    path: '/api/public/device/status/$deviceId',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/alerts': typeof AlertsRoute
+  '/dashboard': typeof DashboardRoute
+  '/dispatch': typeof DispatchRoute
+  '/simulator': typeof SimulatorRoute
+  '/api/public/alerts': typeof ApiPublicAlertsRouteWithChildren
+  '/api/public/health': typeof ApiPublicHealthRoute
+  '/api/public/alerts/$id': typeof ApiPublicAlertsIdRoute
+  '/api/public/device/data': typeof ApiPublicDeviceDataRoute
+  '/api/public/sensors/data': typeof ApiPublicSensorsDataRoute
+  '/api/public/sensors/history': typeof ApiPublicSensorsHistoryRoute
+  '/api/public/sensors/latest': typeof ApiPublicSensorsLatestRoute
+  '/api/public/test/sensor-data': typeof ApiPublicTestSensorDataRoute
+  '/api/public/device/status/$deviceId': typeof ApiPublicDeviceStatusDeviceIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/alerts': typeof AlertsRoute
+  '/dashboard': typeof DashboardRoute
+  '/dispatch': typeof DispatchRoute
+  '/simulator': typeof SimulatorRoute
+  '/api/public/alerts': typeof ApiPublicAlertsRouteWithChildren
+  '/api/public/health': typeof ApiPublicHealthRoute
+  '/api/public/alerts/$id': typeof ApiPublicAlertsIdRoute
+  '/api/public/device/data': typeof ApiPublicDeviceDataRoute
+  '/api/public/sensors/data': typeof ApiPublicSensorsDataRoute
+  '/api/public/sensors/history': typeof ApiPublicSensorsHistoryRoute
+  '/api/public/sensors/latest': typeof ApiPublicSensorsLatestRoute
+  '/api/public/test/sensor-data': typeof ApiPublicTestSensorDataRoute
+  '/api/public/device/status/$deviceId': typeof ApiPublicDeviceStatusDeviceIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/alerts': typeof AlertsRoute
+  '/dashboard': typeof DashboardRoute
+  '/dispatch': typeof DispatchRoute
+  '/simulator': typeof SimulatorRoute
+  '/api/public/alerts': typeof ApiPublicAlertsRouteWithChildren
+  '/api/public/health': typeof ApiPublicHealthRoute
+  '/api/public/alerts/$id': typeof ApiPublicAlertsIdRoute
+  '/api/public/device/data': typeof ApiPublicDeviceDataRoute
+  '/api/public/sensors/data': typeof ApiPublicSensorsDataRoute
+  '/api/public/sensors/history': typeof ApiPublicSensorsHistoryRoute
+  '/api/public/sensors/latest': typeof ApiPublicSensorsLatestRoute
+  '/api/public/test/sensor-data': typeof ApiPublicTestSensorDataRoute
+  '/api/public/device/status/$deviceId': typeof ApiPublicDeviceStatusDeviceIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/alerts'
+    | '/dashboard'
+    | '/dispatch'
+    | '/simulator'
+    | '/api/public/alerts'
+    | '/api/public/health'
+    | '/api/public/alerts/$id'
+    | '/api/public/device/data'
+    | '/api/public/sensors/data'
+    | '/api/public/sensors/history'
+    | '/api/public/sensors/latest'
+    | '/api/public/test/sensor-data'
+    | '/api/public/device/status/$deviceId'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/alerts'
+    | '/dashboard'
+    | '/dispatch'
+    | '/simulator'
+    | '/api/public/alerts'
+    | '/api/public/health'
+    | '/api/public/alerts/$id'
+    | '/api/public/device/data'
+    | '/api/public/sensors/data'
+    | '/api/public/sensors/history'
+    | '/api/public/sensors/latest'
+    | '/api/public/test/sensor-data'
+    | '/api/public/device/status/$deviceId'
+  id:
+    | '__root__'
+    | '/'
+    | '/alerts'
+    | '/dashboard'
+    | '/dispatch'
+    | '/simulator'
+    | '/api/public/alerts'
+    | '/api/public/health'
+    | '/api/public/alerts/$id'
+    | '/api/public/device/data'
+    | '/api/public/sensors/data'
+    | '/api/public/sensors/history'
+    | '/api/public/sensors/latest'
+    | '/api/public/test/sensor-data'
+    | '/api/public/device/status/$deviceId'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AlertsRoute: typeof AlertsRoute
+  DashboardRoute: typeof DashboardRoute
+  DispatchRoute: typeof DispatchRoute
+  SimulatorRoute: typeof SimulatorRoute
+  ApiPublicAlertsRoute: typeof ApiPublicAlertsRouteWithChildren
+  ApiPublicHealthRoute: typeof ApiPublicHealthRoute
+  ApiPublicDeviceDataRoute: typeof ApiPublicDeviceDataRoute
+  ApiPublicSensorsDataRoute: typeof ApiPublicSensorsDataRoute
+  ApiPublicSensorsHistoryRoute: typeof ApiPublicSensorsHistoryRoute
+  ApiPublicSensorsLatestRoute: typeof ApiPublicSensorsLatestRoute
+  ApiPublicTestSensorDataRoute: typeof ApiPublicTestSensorDataRoute
+  ApiPublicDeviceStatusDeviceIdRoute: typeof ApiPublicDeviceStatusDeviceIdRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +221,126 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/alerts': {
+      id: '/alerts'
+      path: '/alerts'
+      fullPath: '/alerts'
+      preLoaderRoute: typeof AlertsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard': {
+      id: '/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof DashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dispatch': {
+      id: '/dispatch'
+      path: '/dispatch'
+      fullPath: '/dispatch'
+      preLoaderRoute: typeof DispatchRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/simulator': {
+      id: '/simulator'
+      path: '/simulator'
+      fullPath: '/simulator'
+      preLoaderRoute: typeof SimulatorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/public/alerts': {
+      id: '/api/public/alerts'
+      path: '/api/public/alerts'
+      fullPath: '/api/public/alerts'
+      preLoaderRoute: typeof ApiPublicAlertsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/public/health': {
+      id: '/api/public/health'
+      path: '/api/public/health'
+      fullPath: '/api/public/health'
+      preLoaderRoute: typeof ApiPublicHealthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/public/alerts/$id': {
+      id: '/api/public/alerts/$id'
+      path: '/$id'
+      fullPath: '/api/public/alerts/$id'
+      preLoaderRoute: typeof ApiPublicAlertsIdRouteImport
+      parentRoute: typeof ApiPublicAlertsRoute
+    }
+    '/api/public/device/data': {
+      id: '/api/public/device/data'
+      path: '/api/public/device/data'
+      fullPath: '/api/public/device/data'
+      preLoaderRoute: typeof ApiPublicDeviceDataRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/public/sensors/data': {
+      id: '/api/public/sensors/data'
+      path: '/api/public/sensors/data'
+      fullPath: '/api/public/sensors/data'
+      preLoaderRoute: typeof ApiPublicSensorsDataRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/public/sensors/history': {
+      id: '/api/public/sensors/history'
+      path: '/api/public/sensors/history'
+      fullPath: '/api/public/sensors/history'
+      preLoaderRoute: typeof ApiPublicSensorsHistoryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/public/sensors/latest': {
+      id: '/api/public/sensors/latest'
+      path: '/api/public/sensors/latest'
+      fullPath: '/api/public/sensors/latest'
+      preLoaderRoute: typeof ApiPublicSensorsLatestRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/public/test/sensor-data': {
+      id: '/api/public/test/sensor-data'
+      path: '/api/public/test/sensor-data'
+      fullPath: '/api/public/test/sensor-data'
+      preLoaderRoute: typeof ApiPublicTestSensorDataRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/public/device/status/$deviceId': {
+      id: '/api/public/device/status/$deviceId'
+      path: '/api/public/device/status/$deviceId'
+      fullPath: '/api/public/device/status/$deviceId'
+      preLoaderRoute: typeof ApiPublicDeviceStatusDeviceIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
+interface ApiPublicAlertsRouteChildren {
+  ApiPublicAlertsIdRoute: typeof ApiPublicAlertsIdRoute
+}
+
+const ApiPublicAlertsRouteChildren: ApiPublicAlertsRouteChildren = {
+  ApiPublicAlertsIdRoute: ApiPublicAlertsIdRoute,
+}
+
+const ApiPublicAlertsRouteWithChildren = ApiPublicAlertsRoute._addFileChildren(
+  ApiPublicAlertsRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AlertsRoute: AlertsRoute,
+  DashboardRoute: DashboardRoute,
+  DispatchRoute: DispatchRoute,
+  SimulatorRoute: SimulatorRoute,
+  ApiPublicAlertsRoute: ApiPublicAlertsRouteWithChildren,
+  ApiPublicHealthRoute: ApiPublicHealthRoute,
+  ApiPublicDeviceDataRoute: ApiPublicDeviceDataRoute,
+  ApiPublicSensorsDataRoute: ApiPublicSensorsDataRoute,
+  ApiPublicSensorsHistoryRoute: ApiPublicSensorsHistoryRoute,
+  ApiPublicSensorsLatestRoute: ApiPublicSensorsLatestRoute,
+  ApiPublicTestSensorDataRoute: ApiPublicTestSensorDataRoute,
+  ApiPublicDeviceStatusDeviceIdRoute: ApiPublicDeviceStatusDeviceIdRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
