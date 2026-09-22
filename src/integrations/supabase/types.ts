@@ -14,10 +14,164 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      alerts: {
+        Row: {
+          acknowledged: boolean
+          acknowledged_at: string | null
+          device_id: string
+          id: string
+          message: string
+          sensor: string | null
+          severity: string
+          threshold: number | null
+          timestamp: string
+          type: string
+          value: number | null
+        }
+        Insert: {
+          acknowledged?: boolean
+          acknowledged_at?: string | null
+          device_id: string
+          id?: string
+          message: string
+          sensor?: string | null
+          severity: string
+          threshold?: number | null
+          timestamp?: string
+          type: string
+          value?: number | null
+        }
+        Update: {
+          acknowledged?: boolean
+          acknowledged_at?: string | null
+          device_id?: string
+          id?: string
+          message?: string
+          sensor?: string | null
+          severity?: string
+          threshold?: number | null
+          timestamp?: string
+          type?: string
+          value?: number | null
+        }
+        Relationships: []
+      }
+      devices: {
+        Row: {
+          api_key: string
+          created_at: string
+          device_id: string
+          id: string
+          last_seen: string | null
+          name: string
+          status: string
+        }
+        Insert: {
+          api_key: string
+          created_at?: string
+          device_id: string
+          id?: string
+          last_seen?: string | null
+          name?: string
+          status?: string
+        }
+        Update: {
+          api_key?: string
+          created_at?: string
+          device_id?: string
+          id?: string
+          last_seen?: string | null
+          name?: string
+          status?: string
+        }
+        Relationships: []
+      }
+      sensor_readings: {
+        Row: {
+          activity_pattern: string
+          classification: string
+          confidence: number
+          created_at: string
+          device_id: string
+          gas: number | null
+          humidity: number | null
+          id: string
+          motion: boolean
+          presence: boolean
+          pressure: number | null
+          raw_payload: Json | null
+          risk_level: string
+          sound: number | null
+          temperature: number | null
+          timestamp: string
+        }
+        Insert: {
+          activity_pattern?: string
+          classification?: string
+          confidence?: number
+          created_at?: string
+          device_id: string
+          gas?: number | null
+          humidity?: number | null
+          id?: string
+          motion?: boolean
+          presence?: boolean
+          pressure?: number | null
+          raw_payload?: Json | null
+          risk_level?: string
+          sound?: number | null
+          temperature?: number | null
+          timestamp?: string
+        }
+        Update: {
+          activity_pattern?: string
+          classification?: string
+          confidence?: number
+          created_at?: string
+          device_id?: string
+          gas?: number | null
+          humidity?: number | null
+          id?: string
+          motion?: boolean
+          presence?: boolean
+          pressure?: number | null
+          raw_payload?: Json | null
+          risk_level?: string
+          sound?: number | null
+          temperature?: number | null
+          timestamp?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
-      [_ in never]: never
+      devices_public: {
+        Row: {
+          created_at: string | null
+          device_id: string | null
+          id: string | null
+          last_seen: string | null
+          name: string | null
+          status: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          device_id?: string | null
+          id?: string | null
+          last_seen?: string | null
+          name?: string | null
+          status?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          device_id?: string | null
+          id?: string | null
+          last_seen?: string | null
+          name?: string | null
+          status?: string | null
+        }
+        Relationships: []
+      }
     }
     Functions: {
       [_ in never]: never
