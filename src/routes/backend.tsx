@@ -36,7 +36,7 @@ function BackendPage() {
     const res = await fetch(ep.path, {
       method: ep.method,
       headers: ep.body ? { "Content-Type": "application/json" } : undefined,
-      body: ep.body ? JSON.stringify(ep.body) : undefined,
+      body: ep.body ? JSON.stringify(ep.body) : null,
     });
     const text = await res.text();
     const ms = Math.round(performance.now() - t);
