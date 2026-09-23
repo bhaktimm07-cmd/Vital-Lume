@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Home, Activity, Bell, Siren, Zap } from "lucide-react";
+import { Home, Activity, Bell, Siren, Zap, Server } from "lucide-react";
 
 const links = [
   { to: "/", label: "Home", icon: Home },
@@ -7,6 +7,7 @@ const links = [
   { to: "/simulator", label: "Simulator", icon: Zap },
   { to: "/alerts", label: "Alerts", icon: Bell },
   { to: "/dispatch", label: "Dispatch", icon: Siren },
+  { to: "/backend", label: "Backend", icon: Server },
 ];
 
 export function SiteNav() {

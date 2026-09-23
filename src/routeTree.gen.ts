@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AlertsRouteImport } from './routes/alerts'
+import { Route as BackendRouteImport } from './routes/backend'
 import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as DispatchRouteImport } from './routes/dispatch'
 import { Route as SimulatorRouteImport } from './routes/simulator'
@@ -32,6 +33,11 @@ const IndexRoute = IndexRouteImport.update({
 const AlertsRoute = AlertsRouteImport.update({
   id: '/alerts',
   path: '/alerts',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BackendRoute = BackendRouteImport.update({
+  id: '/backend',
+  path: '/backend',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DashboardRoute = DashboardRouteImport.update({
@@ -99,6 +105,7 @@ const ApiPublicDeviceStatusDeviceIdRoute =
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/alerts': typeof AlertsRoute
+  '/backend': typeof BackendRoute
   '/dashboard': typeof DashboardRoute
   '/dispatch': typeof DispatchRoute
   '/simulator': typeof SimulatorRoute
@@ -115,6 +122,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/alerts': typeof AlertsRoute
+  '/backend': typeof BackendRoute
   '/dashboard': typeof DashboardRoute
   '/dispatch': typeof DispatchRoute
   '/simulator': typeof SimulatorRoute
@@ -132,6 +140,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/alerts': typeof AlertsRoute
+  '/backend': typeof BackendRoute
   '/dashboard': typeof DashboardRoute
   '/dispatch': typeof DispatchRoute
   '/simulator': typeof SimulatorRoute
@@ -150,6 +159,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/alerts'
+    | '/backend'
     | '/dashboard'
     | '/dispatch'
     | '/simulator'
@@ -166,6 +176,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/alerts'
+    | '/backend'
     | '/dashboard'
     | '/dispatch'
     | '/simulator'
@@ -182,6 +193,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/alerts'
+    | '/backend'
     | '/dashboard'
     | '/dispatch'
     | '/simulator'
@@ -199,6 +211,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AlertsRoute: typeof AlertsRoute
+  BackendRoute: typeof BackendRoute
   DashboardRoute: typeof DashboardRoute
   DispatchRoute: typeof DispatchRoute
   SimulatorRoute: typeof SimulatorRoute
@@ -226,6 +239,13 @@ declare module '@tanstack/react-router' {
       path: '/alerts'
       fullPath: '/alerts'
       preLoaderRoute: typeof AlertsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/backend': {
+      id: '/backend'
+      path: '/backend'
+      fullPath: '/backend'
+      preLoaderRoute: typeof BackendRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/dashboard': {
@@ -330,6 +350,7 @@ const ApiPublicAlertsRouteWithChildren = ApiPublicAlertsRoute._addFileChildren(
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AlertsRoute: AlertsRoute,
+  BackendRoute: BackendRoute,
   DashboardRoute: DashboardRoute,
   DispatchRoute: DispatchRoute,
   SimulatorRoute: SimulatorRoute,
