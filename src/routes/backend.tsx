@@ -35,7 +35,7 @@ function BackendPage() {
     const t = performance.now();
     const res = await fetch(ep.path, {
       method: ep.method,
-      headers: ep.body ? { "Content-Type": "application/json" } : undefined,
+      headers: { "Content-Type": "application/json" },
       body: ep.body ? JSON.stringify(ep.body) : null,
     });
     const text = await res.text();
