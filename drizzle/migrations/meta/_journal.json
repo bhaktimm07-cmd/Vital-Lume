@@ -15,6 +15,13 @@
       "when": 1790096990433,
       "tag": "0001_fix_devices_public_view",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1790545269655,
+      "tag": "0002_tighten_public_rls_policies",
+      "breakpoints": true
     }
   ]
 }
