@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Home, Activity, Bell, Siren, Zap, Server } from "lucide-react";
+import { Home, Activity, Bell, Siren, Zap } from "lucide-react";
 
 const links = [
   { to: "/", label: "Home", icon: Home },
